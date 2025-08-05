@@ -1,4 +1,6 @@
 import { create } from "zustand";
+import useMapStore from "./map";
+import { reset as resetPlayerStore } from "./player";
 
 const useStore = create((set) => ({
   status: "running",
@@ -8,6 +10,11 @@ const useStore = create((set) => ({
   },
   endGame: () => {
     set({ status: "over" });
+  },
+  reset: () => {
+    useMapStore.getState().reset();
+    resetPlayerStore();
+    set({ status: "running", score: 0 });
   },
 }));
 

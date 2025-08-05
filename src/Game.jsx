@@ -3,6 +3,7 @@ import { Player } from "./components/Player";
 import { Map } from "./components/Map";
 import { Score } from "./components/Score";
 import { Controls } from "./components/Controls";
+import { Result } from "./components/Result";
 import "./Game.css";
 
 export default function Game() {
@@ -14,6 +15,7 @@ export default function Game() {
       </Scene>
       <Score />
       <Controls />
+      <Result />
     </div>
   );
 }

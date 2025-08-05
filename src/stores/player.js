@@ -39,3 +39,14 @@ export function stepCompleted() {
 
   useGameStore.getState().updateScore(state.currentRow);
 }
+
+export function reset() {
+  state.currentRow = 0;
+  state.currentTile = 0;
+  state.movesQueue = [];
+
+  if (!state.ref) return;
+  state.ref.position.x = 0;
+  state.ref.position.y = 0;
+  state.ref.children[0].rotation.z = 0;
+}
