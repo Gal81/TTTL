@@ -11,5 +11,10 @@ export const rows = [
     direction: false,
     speed: 1,
     vehicles: [{ initialTileIndex: 2, color: 0xff0000 }],
+  }, {
+    type: "truck",
+    direction: true,
+    speed: 0,
+    vehicles: [{ initialTileIndex: -4, color: 0x00ff00 }],
   },
 ];
