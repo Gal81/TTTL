@@ -1,6 +1,7 @@
-export function DirectionalLight() {
+export function DirectionalLight({ ref }) {
   return (
     <directionalLight
+      ref={ref}
       position={[-100, -100, 200]}
       up={[0, 0, 1]}
       castShadow
