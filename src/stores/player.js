@@ -3,10 +3,15 @@ import useMapStore from "./map";
 import useGameStore from "./game";
 
 export const state = {
+  ref: null,
   currentRow: 0,
   currentTile: 0,
   movesQueue: [],
 };
+
+export function setRef(ref) {
+  state.ref = ref;
+}
 
 export function queueMove(direction) {
   const isValidMove = endsUpInValidPosition(
