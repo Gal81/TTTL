@@ -1,4 +1,5 @@
 import { endsUpInValidPosition } from "../utilities/endsUpInValidPosition";
+import useMapStore from "./map";
 
 export const state = {
   currentRow: 0,
@@ -24,4 +25,9 @@ export function stepCompleted() {
   if (direction === "backward") state.currentRow -= 1;
   if (direction === "left") state.currentTile -= 1;
   if (direction === "right") state.currentTile += 1;
+
+  // Add new rows if the player is running out of them
+  if (state.currentRow === useMapStore.getState().rows.length - 10) {
+    useMapStore.getState().addRows();
+  }
 }
